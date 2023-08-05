@@ -6,7 +6,7 @@ import Write from './Pages/Write';
 import Login from './Pages/Login';
 import Single from './Pages/Single';
 import Register from './Pages/Register';
-
+ 
 function App() {
   return (
     <div className="app">
