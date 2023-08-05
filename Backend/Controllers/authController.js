@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 
 export const Register = (req, res) => {
-    let q = "SELECT * from blog_app.users WHERE email=? OR username=?";
+    let q = "SELECT * from railway.users WHERE email=? OR username=?";
 
     db.query(q, [req.body.email, req.body.username], (err, data) => {
         if (err) return res.json(err)
@@ -13,7 +13,7 @@ export const Register = (req, res) => {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
 
-        q = "INSERT INTO blog_app.users(`username`,`email`,`password`,`img`) VALUES (?)";
+        q = "INSERT INTO railway.users(`username`,`email`,`password`,`img`) VALUES (?)";
         const values = [
             req.body.username,
             req.body.email,
@@ -27,7 +27,7 @@ export const Register = (req, res) => {
     });
 }
 export const Login = (req, res) => {
-    let q = "SELECT * from blog_app.users WHERE username=?";
+    let q = "SELECT * from railway.users WHERE username=?";
 
     db.query(q, [req.body.username], (err, data) => {
         if (err) return res.json(err)
