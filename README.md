@@ -1,6 +1,6 @@
 # Blog App using MySQL
 
-A MERN application for basic CRUD operations , authentication and authorization.
+A application using basic CRUD operations , MySQL , authentication and authorization.
 
 ## Table of Contents
 
